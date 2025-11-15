@@ -2,21 +2,19 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Копируем package.json сначала для кэширования зависимостей
+# Устанавливаем дополнительные утилиты для диагностики
+RUN apk add --no-cache tini
+ENTRYPOINT ["/sbin/tini", "--"]
+
 COPY package*.json ./
 RUN npm install --production
 
-# Копируем исходный код
 COPY . .
 
-# Создаем не-root пользователя для безопасности
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
-RUN chown -R nextjs:nodejs /app
-USER nextjs
+# Создаем директорию для логов
+RUN mkdir -p /app/logs && chmod 755 /app/logs
 
-# Открываем порт
 EXPOSE 3000
 
-# Запускаем приложение
+# Запускаем с логированием в stdout
 CMD ["npm", "start"]
