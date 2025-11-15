@@ -1,29 +1,11 @@
 {
   "name": "smartclinic-bot",
-  "version": "3.0.0",
-  "description": "Telegram bot + WebApp for Smart Clinic - Full TZ implementation",
+  "version": "1.0.0", 
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "build": "npm install",
-    "migrate": "node scripts/migrate.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "telegraf": "^4.16.3",
-    "express": "^4.18.2",
-    "pg": "^8.12.0",
-    "dotenv": "^16.4.5",
-    "node-cron": "^3.0.3",
-    "axios": "^1.6.0",
-    "cors": "^2.8.5",
-    "helmet": "^7.1.0",
-    "compression": "^1.7.4"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
-  },
-  "engines": {
-    "node": "18.x"
+    "express": "^4.18.2"
   }
 }
