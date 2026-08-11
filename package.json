@@ -1,0 +1,25 @@
+{
+  "name": "learning-bot-platform",
+  "version": "2.0.0",
+  "description": "Обучающий бот для MAX и VK (конструктор)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "dotenv": "^16.4.5",
+    "bcryptjs": "^2.4.3",
+    "multer": "^1.4.5-lts.1",
+    "axios": "^1.7.7",
+    "uuid": "^10.0.0",
+    "helmet": "^8.0.0",
+    "cors": "^2.8.5",
+    "pg": "^8.11.0"
+  }
+}
